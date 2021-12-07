@@ -20,7 +20,3 @@ query weather for a particular interval of one hours
 
 access application from browser
 `http://localhost:8080/`
-
-git remote add origin https://github.com/nishant0302/weatherforecast.git
-git branch -M main
-git push -u origin main
