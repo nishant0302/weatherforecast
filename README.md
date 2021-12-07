@@ -1,5 +1,5 @@
 A simple Feign client usage example. Fetches weather data from https://www.yr.no/ and display that on a browser.
-
+This application show weather forecast during morning and lunch time.
 Based on the work of:
 
 Requires:

@@ -9,11 +9,8 @@ import com.example.weatherforcast.exception.ForecastException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -52,6 +49,15 @@ public class ForecastService {
         return shortInterval.get();
     }
 
+    /**
+     * this method check if forecast is available during specified
+     * interval
+     *
+     * @param interval
+     * @param shortInterval
+     * @param dateToForecast
+     * @return
+     */
     private boolean checkIfValidInterval(String interval, ShortInterval shortInterval, LocalDateTime dateToForecast) {
         LocalDateTime dateAt7 = dateToForecast.with(LocalTime.of(7, 0));
         LocalDateTime dateAt8 = dateToForecast.with(LocalTime.of(8, 0));

@@ -27,11 +27,11 @@
                 var data = JSON.parse(this.responseText);
                 if(value === "morning")
                 {
-                document.getElementById("div1").innerHTML = "<p><h3>Weather Details During the time you get off the Bus</h3></p><p>Is Umbrella needed?: "+ data.isCloudy +" </p><p>Temperature : " + data.temp + "</p> <p>Feels Like : " + data.feelsLike + "</p> <p>Weather Type : " + data.weatherSymbolCode + "</p>";
+                document.getElementById("div1").innerHTML = "<p><h3>Weather Details During the time you get off the Bus</h3></p><p>Is Umbrella needed?: "+ data.isCloudy +" </p><p>Temperature : " + data.temp + "</p> <p>Feels Like : " + data.feelsLike + "</p> <p>Weather Type : " + data.weatherSymbolCode + "</p> <p>Date : " + data.dateTime + "</p>";
                 }
                 else
                 {
-                document.getElementById("div1").innerHTML = "<p><h3>Weather Details During lunch</h3></p><p>Is it Sunny during Lunch?: "+ data.isSunny +" </p><p>Temperature : " + data.temp + "</p> <p>Feels Like : " + data.feelsLike + "</p> <p>Weather Type : " + data.weatherSymbolCode + "</p>";
+                document.getElementById("div1").innerHTML = "<p><h3>Weather Details During lunch</h3></p><p>Is it Sunny during Lunch?: "+ data.isSunny +" </p><p>Temperature : " + data.temp + "</p> <p>Feels Like : " + data.feelsLike + "</p> <p>Weather Type : " + data.weatherSymbolCode + "</p> <p>Date : " + data.dateTime + "</p>";
                 }
                 }
         }

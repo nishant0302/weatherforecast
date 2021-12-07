@@ -18,6 +18,7 @@ public class ForecastResponseDto {
     private String weatherSymbolCode;
     private String isCloudy;
     private String isSunny;
+    private String dateTime;
 
     public static ForecastResponseDto toResponseDto(ShortInterval shortInterval, String locationId){
         ForecastResponseDto dto = new ForecastResponseDto();
@@ -25,6 +26,7 @@ public class ForecastResponseDto {
         dto.setFeelsLike(shortInterval.getFeelsLike().getValue());
         dto.setTemp(shortInterval.getTemperature().getValue());
         dto.setWeatherSymbolCode(shortInterval.getSymbolCode().getNext1Hour());
+        dto.setDateTime(shortInterval.getStart().substring(0,10));
         if(shortInterval.getSymbolCode().getNext1Hour().contains("cloud"))
             dto.setIsCloudy("yes");
         else
