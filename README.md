@@ -5,8 +5,8 @@ Based on the work of:
 Requires:
 
 Java 11
-Spring Boot 2.5.2
-Reactive Web
+Spring Boot 2.6.1
+spring-cloud-starter-openfeign
 
 build the application
 `mvn clean install`
