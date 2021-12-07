@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Forecast</title>
+</head>
+<body>
+<a href="#" onclick="viewWeather('morning')"> Do I need an umbrella when I get off the bus at Telenor Fornebu? </a></p>
+<a href="#" onclick="viewWeather('lunch')"> Will the sun be shining in lunch time? </a></p>
+<div id = 'div1'>
+</div>
+</body>
+<script type="text/javascript">
+
+    function viewWeather(value) {
+
+        // Creating Our XMLHttpRequest object
+        var xhr = new XMLHttpRequest();
+
+        // Making our connection
+        var url = '/weather/forecast/by/location/1-2261640?timeInterval=' +value;
+        xhr.open("GET", url, true);
+
+        // function execute after request is successful
+        xhr.onreadystatechange = function () {
+                if(this.readyState == 4){
+                var data = JSON.parse(this.responseText);
+                if(value === "morning")
+                {
+                document.getElementById("div1").innerHTML = "<p><h3>Weather Details During the time you get off the Bus</h3></p><p>Is Umbrella needed?: "+ data.isCloudy +" </p><p>Temperature : " + data.temp + "</p> <p>Feels Like : " + data.feelsLike + "</p> <p>Weather Type : " + data.weatherSymbolCode + "</p>";
+                }
+                else
+                {
+                document.getElementById("div1").innerHTML = "<p><h3>Weather Details During lunch</h3></p><p>Is it Sunny during Lunch?: "+ data.isSunny +" </p><p>Temperature : " + data.temp + "</p> <p>Feels Like : " + data.feelsLike + "</p> <p>Weather Type : " + data.weatherSymbolCode + "</p>";
+                }
+                }
+        }
+        // Sending our request
+        xhr.send();
+    }
+</script>
+</html>
